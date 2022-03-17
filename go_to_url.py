@@ -10,15 +10,8 @@ import random
 def email_generator(name):
     r = random.randint(10000,99999)
     email = name + str(r) + "@gmail.com"
+    print(email)
     return email
-
-
-driver = webdriver.Chrome("chromedriver")
-driver.implicitly_wait(10)
-driver.maximize_window()
-action = ActionChains(driver)
-driver.get("https://www.phptravels.net/signup")
-
 
 first_name = "Samvel"
 last_name = "Simonyan"
@@ -26,8 +19,15 @@ phone = "123456789"
 email = email_generator("Samvel")
 password = email
 hotel_location = "Yerevan"
+base_url = "https://www.phptravels.net/signup"
 
-print(email)
+
+driver = webdriver.Chrome("chromedriver")
+driver.implicitly_wait(10)
+driver.maximize_window()
+action = ActionChains(driver)
+driver.get(base_url)
+
 
 driver.find_element_by_xpath('//*[@placeholder="First Name"]').send_keys(first_name)
 driver.find_element_by_xpath('//*[@placeholder="Last Name"]').send_keys(last_name)

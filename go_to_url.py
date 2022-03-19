@@ -21,9 +21,3 @@ for room in room_list:
 
 customer_info_filler()
 url = driver.current_url
-
-print(url)
-true_url = "https://www.agoda.com/book/payment/"
-false_url = "https://www.agoda.com/book/not_payment/"
-print(true_url in url)
-print(false_url in url)
